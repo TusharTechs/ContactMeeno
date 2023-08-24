@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Chart from "chart.js/auto";
@@ -31,6 +31,15 @@ const ChartsAndMaps: React.FC = () => {
 
   // Reference to the graph canvas element
   const graphCanvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  const mapContainerProps = useMemo(
+    () => ({
+      center: [20, 0],
+      zoom: 2,
+      style: { width: "100%", height: "426px", margin: "0 auto" },
+    }),
+    []
+  );
 
   // Fetch data on component mount
   useEffect(() => {
@@ -112,11 +121,7 @@ const ChartsAndMaps: React.FC = () => {
         {isLoading ? (
           <div className="loading-screen">Loading Map...</div>
         ) : (
-          <MapContainer
-            center={[20, 0]}
-            zoom={2}
-            style={{ width: "100%", height: "426px", margin: "0 auto" }}
-          >
+          <MapContainer {...mapContainerProps}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {mapMarkers}
           </MapContainer>
