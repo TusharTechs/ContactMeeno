@@ -12,6 +12,10 @@ Welcome to the **Contact-Meeno** project, a Contact Management App designed to p
 
 - **Charts and Maps Page (/charts-and-maps):** This page is dedicated to presenting data visualizations. It includes a chart showcasing COVID-19 cases fluctuation over different years using `react-chartjs-2` and `Chart.js`. Additionally, there's a map component powered by `React Leaflet`, which displays country-specific COVID-19 statistics.
 
+## Deployed Link
+
+[ContactMeeno](https://contact-meeno.vercel.app/)
+
 ## Installation
 
 1. Clone this repository to your local machine using:
