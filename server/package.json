@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start-dev": "nodemon index.js",
+    "build": "npm i"
   },
   "author": "Tushar Agarwal",
   "license": "ISC",
