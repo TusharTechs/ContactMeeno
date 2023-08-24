@@ -15,19 +15,19 @@ Welcome to the **Contact-Meeno** project, a Contact Management App designed to p
 ## Installation
 
 1. Clone this repository to your local machine using:
-#### git clone https://github.com/your-username/contact-meeno.git
+`git clone https://github.com/your-username/contact-meeno.git`
 
 2. Navigate to the project directory:
-#### cd contact-meeno
+`cd contact-meeno`
 
 3. Install the required dependencies:
-#### npm install
+`npm install`
 
 4. Create a `.env` file in the root directory for environment variables like API keys and database connection details.
-#### DB_URL=your_mongodb_url
+`DB_URL=your_mongodb_url`
 
 5. Start the development server:
-#### npm run dev
+`npm run dev`
 
 6. Access the application at `[http://localhost:3000](http://localhost:5173)` in your web browser.
 
