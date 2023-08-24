@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { divIcon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import Chart from "chart.js/auto";
 import "./styles.css";
@@ -16,6 +17,13 @@ interface CountryData {
     long: number;
   };
 }
+
+const customIcon = divIcon({
+  className: 'custom-icon',
+  html: '<div>📍</div>',
+  iconSize: [24, 24],
+  iconAnchor: [12, 24],
+});
 
 // Interface for historical graph data
 interface GraphData {
@@ -34,9 +42,9 @@ const ChartsAndMaps: React.FC = () => {
 
   const mapContainerProps = useMemo(
     () => ({
-      center: [20, 0],
+      center: { lat: 20, lng: 0 }, 
       zoom: 2,
-      style: { width: "100%", height: "426px", margin: "0 auto" },
+      style: { width: '100%', height: '426px', margin: '0 auto' },
     }),
     []
   );
@@ -90,18 +98,19 @@ const ChartsAndMaps: React.FC = () => {
   // Create map markers based on country data
   const mapMarkers = countryData.map((country) => (
     <Marker
-      key={country.country}
-      position={[country.countryInfo.lat, country.countryInfo.long]}
-    >
-      <Popup>
-        <div>
-          <h3>{country.country}</h3>
-          <p>Total Active Cases: {country.active}</p>
-          <p>Total Recovered Cases: {country.recovered}</p>
-          <p>Total Deaths: {country.deaths}</p>
-        </div>
-      </Popup>
-    </Marker>
+    key={country.country}
+    position={[country.countryInfo.lat, country.countryInfo.long]}
+    icon={customIcon}
+  >
+    <Popup>
+      <div>
+        <h3>{country.country}</h3>
+        <p>Total Active Cases: {country.active}</p>
+        <p>Total Recovered Cases: {country.recovered}</p>
+        <p>Total Deaths: {country.deaths}</p>
+      </div>
+    </Popup>
+  </Marker>
   ));
 
   return (
