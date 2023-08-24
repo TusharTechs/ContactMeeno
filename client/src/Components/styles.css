@@ -1,0 +1,80 @@
+.modal-content {
+  width: 60%;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+}
+
+.modal-content .flex {
+  justify-content: center;
+}
+
+.chart-container,
+.map-container {
+  margin-left: 200px;
+  padding-left: 100px;
+  margin-bottom: 20px;
+}
+
+.charts-maps-section {
+  width: 80%;
+}
+
+@media only screen and (max-width: 1440px) {
+  .chart-container,
+  .map-container {
+    margin-left: 100px;
+    width: 720px;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .chart-container,
+  .map-container {
+    margin-left: 50px;
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .charts-maps-section {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .charts-maps-section {
+    width: 10%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .charts-maps-section {
+    width: 10%;
+    height: auto;
+  }
+}
+
+@media (max-width: 850px) {
+  .charts-maps-section {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    gap: none;
+  }
+}
